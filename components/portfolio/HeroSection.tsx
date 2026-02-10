@@ -104,7 +104,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
             <span
               className="relative z-10"
               style={{
-                WebkitTextStroke: '2px #64748b',
+                WebkitTextStroke: '1px #64748b',
                 textShadow: '-2px 2px 0 #ffffffea, -4px 4px 0 #ffffffea'
               }}
             >

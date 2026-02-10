@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navigation() {
+  const { t, language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,9 +17,9 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { label: 'Work', href: '#categories' },
-    { label: 'About', href: '#home' },
-    { label: 'Contact', href: '#contact' },
+    { label: t.nav.work, href: '#categories' },
+    { label: t.nav.about, href: '#home' },
+    { label: t.nav.contact, href: '#contact' },
   ];
 
   return (
@@ -43,11 +45,18 @@ export default function Navigation() {
               {item.label}
             </a>
           ))}
+          <button
+            onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+            className="flex items-center gap-2 px-3 py-2 text-sm text-slate-400 hover:text-white transition-colors"
+          >
+            <Globe className="w-4 h-4" />
+            <span className="uppercase">{language}</span>
+          </button>
           <a
             href="mailto:hello@example.com"
             className="px-5 py-2 text-sm bg-white text-slate-900 rounded-full font-medium hover:bg-slate-100 transition-colors"
           >
-            Let&apos;s Talk
+            {t.nav.letsTalk}
           </a>
         </div>
 
@@ -79,11 +88,18 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+              className="flex items-center gap-3 text-lg text-slate-300 hover:text-white transition-colors"
+            >
+              <Globe className="w-5 h-5" />
+              <span className="uppercase">{language === 'en' ? 'Français' : 'English'}</span>
+            </button>
             <a
               href="mailto:hello@example.com"
               className="mt-4 px-5 py-3 text-center bg-white text-slate-900 rounded-full font-medium"
             >
-              Let&apos;s Talk
+              {t.nav.letsTalk}
             </a>
           </div>
         </motion.div>
