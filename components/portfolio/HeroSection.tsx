@@ -6,8 +6,10 @@ interface HeroSectionProps {
   onExplore: () => void;
 }
 
+import { useLanguage } from '@/context/LanguageContext';
+
 export default function HeroSection({ onExplore }: HeroSectionProps) {
-  // Generate random lines on client-side to avoid hydration mismatch
+  const { language, setLanguage, t } = useLanguage();
   const [lines, setLines] = useState<{ id: number; left: string; color: string; duration: number; delay: number }[]>([]);
 
   useEffect(() => {
@@ -37,7 +39,6 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950" id="home">
       {/* Animated Light Lines Background (Vertical Rain) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Use a simpler animation prop for continuous falling */}
         {lines.map((line) => (
           <motion.div
             key={`line-${line.id}`}
@@ -65,6 +66,27 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
 
       <div className="relative z-10 text-center px-6">
         <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex justify-center gap-4 mb-8"
+        >
+          <button
+            onClick={() => setLanguage('fr')}
+            className={`text-sm font-medium transition-colors ${language === 'fr' ? 'text-white border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
+          >
+            FR
+          </button>
+          <span className="text-slate-700">|</span>
+          <button
+            onClick={() => setLanguage('en')}
+            className={`text-sm font-medium transition-colors ${language === 'en' ? 'text-white border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
+          >
+            EN
+          </button>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -75,7 +97,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Creative Developer & Artist
+            {t.hero.subtitle}
           </motion.p>
 
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 tracking-tight relative inline-block">
@@ -83,7 +105,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
               className="relative z-10"
               style={{
                 WebkitTextStroke: '2px #64748b',
-                textShadow: '-2px 2px 0 #ffffffea, -4px 4px 0 #ffffffb0, -6px 6px 0 #ffffff90'
+                textShadow: '-2px 2px 0 #ffffffea, -4px 4px 0 #ffffffea'
               }}
             >
               Morryl Kouemo
@@ -97,8 +119,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
           </h1>
 
           <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-            Crafting immersive solutions across AI, web development,
-            gaming, and 3D visualization
+            {t.hero.description}
           </p>
 
           <motion.div
@@ -107,12 +128,12 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            {['AI & Data', 'Web & Mobile', 'Video Games', '3D Art'].map((item) => (
+            {['ai-data', 'web-mobile', 'video-games', '3d-art'].map((item) => (
               <span
                 key={item}
                 className="px-4 py-2 text-sm text-slate-300 border border-slate-700/50 rounded-full bg-slate-900/50 backdrop-blur-sm"
               >
-                {item}
+                {t.categories[item as keyof typeof t.categories]}
               </span>
             ))}
           </motion.div>

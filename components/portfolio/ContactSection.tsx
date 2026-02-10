@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const socials = [
-    { icon: Github, label: 'GitHub', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Twitter, label: 'Twitter', href: '#' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/MorrylK' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/morryl-kouemo-1b408325b/' },
+    //{ icon: Twitter, label: 'Twitter', href: '#' },
   ];
 
   return (
@@ -17,22 +19,22 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-slate-500 text-sm tracking-[0.2em] uppercase mb-4">Get in Touch</p>
+          <p className="text-slate-500 text-sm tracking-[0.2em] uppercase mb-4">{t.contact.label}</p>
           <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-            Let&apos;s <span className="font-medium">Collaborate</span>
+            {t.contact.title.split(' ')[0]} <span className="font-medium">{t.contact.title.split(' ').slice(1).join(' ')}</span>
           </h2>
           <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-            Have a project in mind or just want to chat? I&apos;m always open to discussing new opportunities and creative ideas.
+            {t.contact.description}
           </p>
 
           <motion.a
-            href="mailto:hello@example.com"
+            href="mailto:morryl.kotym@gmail.com"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-900 rounded-full font-medium hover:bg-slate-100 transition-colors group"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <Mail className="w-5 h-5" />
-            hello@example.com
+            morryl.kotym@gmail.com
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </motion.a>
 
@@ -60,7 +62,7 @@ export default function ContactSection() {
           className="mt-24 pt-8 border-t border-slate-800/50"
         >
           <p className="text-slate-600 text-sm">
-            © 2026 All rights reserved. Built with passion.
+            {t.contact.footer}
           </p>
         </motion.div>
       </div>
