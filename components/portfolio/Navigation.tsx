@@ -1,6 +1,10 @@
+
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navigation() {
@@ -30,9 +34,9 @@ export default function Navigation() {
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-xl font-medium text-white">
+        <Link href="/" className="text-xl font-medium text-white cursor-pointer">
           Portfolio<span className="text-blue-400">.</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -47,10 +51,10 @@ export default function Navigation() {
           ))}
           <button
             onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-            className="flex items-center gap-2 px-3 py-2 text-sm text-slate-400 hover:text-white transition-colors"
+            className="flex items-center gap-2 px-3 py-2 text-sm text-slate-400 hover:text-white transition-colors cursor-pointer"
           >
             <Globe className="w-4 h-4" />
-            <span className="uppercase">{language}</span>
+            <span className="uppercase">{language === 'en' ? 'fr' : 'en'}</span>
           </button>
           <a
             href="mailto:hello@example.com"

@@ -73,14 +73,14 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
         >
           <button
             onClick={() => setLanguage('fr')}
-            className={`text-sm font-medium transition-colors ${language === 'fr' ? 'text-white border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
+            className={`text-sm font-medium cursor-pointer transition-colors ${language === 'fr' ? 'text-white border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
           >
             FR
           </button>
           <span className="text-slate-700">|</span>
           <button
             onClick={() => setLanguage('en')}
-            className={`text-sm font-medium transition-colors ${language === 'en' ? 'text-white border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
+            className={`text-sm font-medium cursor-pointer transition-colors ${language === 'en' ? 'text-white border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-300'}`}
           >
             EN
           </button>
@@ -104,7 +104,7 @@ export default function HeroSection({ onExplore }: HeroSectionProps) {
             <span
               className="relative z-10"
               style={{
-                WebkitTextStroke: '1px #64748b',
+                WebkitTextStroke: '1px #232931ff',
                 textShadow: '-2px 2px 0 #ffffffea, -4px 4px 0 #ffffffea'
               }}
             >

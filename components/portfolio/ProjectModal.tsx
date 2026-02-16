@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Brain, Globe, Gamepad2, Box } from 'lucide-react';
+import { X, Brain, Globe, Gamepad2, Box, LucideIcon } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import ProjectCard from './ProjectCard';
 import { translations } from '@/data/translations';
@@ -16,7 +15,7 @@ interface Project {
   link?: string;
   github?: string;
 }
-const categoryData: Record<keyof typeof translations.en.categories, { title: string; icon: any; color: string; projects: Project[] }> = {
+const categoryData: Record<keyof typeof translations.en.categories, { title: string; icon: LucideIcon; color: string; projects: Project[] }> = {
   'ai-data': {
     title: 'AI & Data',
     icon: Brain,

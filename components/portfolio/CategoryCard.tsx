@@ -44,7 +44,7 @@ interface CategoryCardProps {
   category: keyof typeof categoryStyles;
   title: string;
   icon: React.ElementType;
-  onClick: () => void;
+  onClick?: () => void;
   index: number;
 }
 

@@ -1,16 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import React from 'react';
 import Navigation from '@/components/portfolio/Navigation';
 import HeroSection from '@/components/portfolio/HeroSection';
 import CategorySection from '@/components/portfolio/CategorySection';
 import ContactSection from '@/components/portfolio/ContactSection';
-import ProjectModal from '@/components/portfolio/ProjectModal';
+import AboutSection from '@/components/portfolio/AboutSection';
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState<'ai-data' | 'web-mobile' | 'video-games' | '3d-art' | null>(null);
-
   const handleExplore = () => {
     document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -23,23 +20,14 @@ export default function Home() {
         <HeroSection onExplore={handleExplore} />
       </div>
       <div id="categories">
-        <CategorySection onCategoryClick={setSelectedCategory} />
+        <CategorySection />
       </div>
-      <div id="about" className="hidden">
-        {/* Hidden about section for now to satisfy link, or alias to home */}
+      <div id="about">
+        <AboutSection />
       </div>
       <div id="contact">
         <ContactSection />
       </div>
-
-      <AnimatePresence>
-        {selectedCategory && (
-          <ProjectModal
-            category={selectedCategory}
-            onClose={() => setSelectedCategory(null)}
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 }
