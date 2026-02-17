@@ -36,6 +36,7 @@ export const translations = {
             subtitle: 'My Stack',
             categories: {
                 ai: 'Data Science & AI',
+                analysis: 'Analysis & Processing',
                 dev: 'Web Technologies',
                 tools: 'Tools & Software'
             }
@@ -83,6 +84,7 @@ export const translations = {
             subtitle: 'Ma Stack',
             categories: {
                 ai: 'Data Science & IA',
+                analysis: 'Analyse et traitement',
                 dev: 'Technologies Web',
                 tools: 'Outils & Logiciels'
             }

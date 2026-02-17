@@ -64,8 +64,8 @@ export default function ProjectCard({ project, category, index }: ProjectCardPro
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
 
-        {/* Hover overlay */}
-        <div className="absolute inset-0 z-20 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4 backdrop-blur-[2px]">
+        {/* Hover overlay - Always visible on mobile without background fade */}
+        <div className="absolute inset-0 z-20 bg-transparent md:bg-slate-950/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4 md:backdrop-blur-[2px]">
           {project.link && (
             <a
               href={project.link}

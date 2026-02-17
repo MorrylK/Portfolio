@@ -34,7 +34,8 @@ export const categoryData: Record<keyof typeof translations.en.categories, Categ
                 image: '/assets/ai-data/survivalanalysisdemo.png',
                 type: 'Data Science',
                 tags: ['Python', 'Lifelines', 'Streamlit', 'Medical AI'],
-                link: 'https://survivalanalysisdemo.streamlit.app'
+                link: 'https://survivalanalysisdemo.streamlit.app',
+                github: 'https://github.com/MorrylK/SurvivalAnalysisDemo'
             }
         ]
     },

@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
-import { Brain, Code, Cpu, Globe } from 'lucide-react';
+import { Brain, Code, Cpu, Globe, BarChart3 } from 'lucide-react';
 
 const skillCategories = [
     {
@@ -15,6 +15,17 @@ const skillCategories = [
             { fr: 'Machine Learning (classification, régression, clustering)', en: 'Machine Learning (classification, regression, clustering)' },
             { fr: 'Réseaux de neurones', en: 'Neural Networks' },
             { fr: 'Validation de modèles', en: 'Model Validation' }
+        ]
+    },
+    {
+        id: 'analysis',
+        icon: BarChart3,
+        skills: [
+            { fr: 'Python (pandas, scikit-learn)', en: 'Python (pandas, scikit-learn)' },
+            { fr: 'R', en: 'R' },
+            { fr: 'PowerBI', en: 'PowerBI' },
+            { fr: 'Excel', en: 'Excel' },
+            { fr: 'SQL', en: 'SQL' }
         ]
     },
     {
@@ -85,7 +96,7 @@ export default function SkillsSection() {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={category.id}
