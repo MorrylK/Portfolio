@@ -31,7 +31,7 @@ export const categoryData: Record<keyof typeof translations.en.categories, Categ
                 titleFr: 'Modèle prédictif d\'analyse de survie',
                 description: 'Prediction model for the median survival time of patients with colorectal cancer.',
                 descriptionFr: 'Réalisation d\'un modèle de prédiction de la durée de survie médiane de patients atteints de cancer colorectal.',
-                image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80',
+                image: '/assets/ai-data/survivalanalysisdemo.png',
                 type: 'Data Science',
                 tags: ['Python', 'Lifelines', 'Streamlit', 'Medical AI'],
                 link: 'https://survivalanalysisdemo.streamlit.app'
@@ -48,20 +48,40 @@ export const categoryData: Record<keyof typeof translations.en.categories, Categ
                 titleFr: 'Plateforme Wanoke Travel',
                 description: 'Web and mobile infrastructure for tracking university applications in China.',
                 descriptionFr: 'Supervision du projet de création de l\'infrastructure web et mobile de l\'entreprise Wanoke Travel, pour le suivi des candidatures dans des universités en Chine.',
-                image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80',
+                image: '/assets/web-mobile-dev/wanoke-travel.png',
                 type: 'Full Stack',
-                tags: ['React', 'Next.js', 'Infrastructure', 'Mobile'],
+                tags: ['React', 'Next.js', 'Expo', 'React-native', 'Infrastructure', 'Mobile', 'Django', 'Postgresql'],
                 link: 'https://www.wanoketravel.com'
+            },
+            {
+                title: 'KyCine Platform',
+                titleFr: 'Plateforme KyCiné',
+                description: 'Professional filming equipment rental platform for high-quality audiovisual projects.',
+                descriptionFr: 'Plateforme de location de matériel de tournage professionnel pour des projets audiovisuels de haute qualité.',
+                image: '/assets/web-mobile-dev/kycine.png',
+                type: 'Full Stack',
+                tags: ['React', 'Next.js', 'E-commerce', 'Django', 'PostgreSQL'],
+                link: 'https://www.kycine.com/'
+            },
+            {
+                title: 'Mboa Express',
+                titleFr: 'Mboa Express',
+                description: 'E-commerce platform for trendy accessories shipped from China to Cameroon.',
+                descriptionFr: 'Plateforme d\'e-commerce d\'accessoires de mode expédiés de la Chine vers le Cameroun.',
+                image: '/assets/web-mobile-dev/mboa-express.png',
+                type: 'Full Stack',
+                tags: ['React', 'Next.js', 'E-commerce', 'Django', 'PostgreSQL'],
+                link: 'https://mboa-express.vercel.app/'
             },
             {
                 title: 'Stock Management Web App',
                 titleFr: 'Application web de gestion de stocks',
                 description: 'Complete stock management application with real-time inventory and shared calendar.',
                 descriptionFr: 'Conception d\'une application web complète de gestion de stocks, facilitant le suivi en temps réel des inventaires, du personnel et d\'un calendrier partagé.',
-                image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
+                image: '/assets/web-mobile-dev/gg.png',
                 type: 'Web App',
                 tags: ['Python', 'Django', 'PostgreSQL', 'Inventory'],
-                link: 'https://www.morrylk.pythonanywhere.com'
+                link: 'https://morrylk.pythonanywhere.com'
             }
         ]
     },
@@ -71,44 +91,24 @@ export const categoryData: Record<keyof typeof translations.en.categories, Categ
         color: 'text-purple-400',
         projects: [
             {
-                title: 'Stellar Odyssey',
-                titleFr: 'Odyssée Stellaire',
-                description: 'Open-world space exploration RPG with procedurally generated planets and alien civilizations.',
-                descriptionFr: 'RPG d\'exploration spatiale avec planètes et civilisations procédurales.',
-                image: 'https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80',
-                type: 'RPG',
-                tags: ['Unreal Engine', 'C++', 'Procedural'],
-                link: '#'
+                title: 'Virtual Keyce',
+                titleFr: 'Virtual Keyce',
+                description: '3D virtual tour of the Keyce Academy campus, allowing students to explore the environment.',
+                descriptionFr: 'Visite virtuelle 3D du campus de Keyce Academy, permettant aux étudiants de découvrir l\'environnement.',
+                image: '/assets/video-games/keyce-3d.png',
+                type: 'Simulation',
+                tags: ['Unity', 'C#', 'Level Design', 'Simulation'],
+                link: 'https://morryl.itch.io/virtual-keyce'
             },
             {
-                title: 'Puzzle Dimensions',
-                titleFr: 'Dimensions Puzzle',
-                description: 'Mind-bending puzzle platformer featuring gravity manipulation and time loops.',
-                descriptionFr: 'Plateformer de puzzle avec manipulation de gravité et boucles temporelles.',
-                image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
-                type: 'Puzzle',
-                tags: ['Unity', 'C#', 'Level Design'],
-                link: '#'
-            },
-            {
-                title: 'Neon Racer',
-                titleFr: 'Pilote Néon',
-                description: 'Fast-paced racing game set in a cyberpunk city with online multiplayer and custom vehicles.',
-                descriptionFr: 'Jeu de course cyberpunk avec multijoueur en ligne.',
-                image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
-                type: 'Racing',
-                tags: ['Unity', 'Photon', 'Mobile'],
-                link: '#'
-            },
-            {
-                title: 'Realm of Shadows',
-                titleFr: 'Royaume des Ombres',
-                description: 'Atmospheric horror adventure with dynamic lighting and AI-driven narrative.',
-                descriptionFr: 'Aventure d\'horreur atmosphérique avec narration guidée par IA.',
-                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
-                type: 'Horror',
-                tags: ['Unreal Engine', 'Blueprints', 'AI'],
-                github: '#'
+                title: 'Balls Competition',
+                titleFr: 'Balls Competition',
+                description: 'Physics-based arcade game where player collect tokens while avoiding balls.',
+                descriptionFr: 'Jeu d\'arcade basé sur la physique où le joueur doit collecter des tokens tout en affrontant des balles adverses.',
+                image: '/assets/video-games/balls-competition.png',
+                type: 'Arcade',
+                tags: ['Unity', 'C#', 'Level Design', 'Prototype'],
+                link: 'https://morryl.itch.io/balls-competition'
             }
         ]
     },
