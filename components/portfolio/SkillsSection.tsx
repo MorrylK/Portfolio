@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
-import { Brain, Code, Cpu, Globe, BarChart3 } from 'lucide-react';
+import { Brain, Code, Cpu, Globe, BarChart3, Users, Palette } from 'lucide-react';
 
 const skillCategories = [
     {
@@ -22,7 +22,7 @@ const skillCategories = [
         icon: BarChart3,
         skills: [
             { fr: 'Python (pandas, scikit-learn)', en: 'Python (pandas, scikit-learn)' },
-            { fr: 'R', en: 'R' },
+            { fr: 'R (ggplot2, tidyverse)', en: 'R (ggplot2, tidyverse)' },
             { fr: 'PowerBI', en: 'PowerBI' },
             { fr: 'Excel', en: 'Excel' },
             { fr: 'SQL', en: 'SQL' }
@@ -37,6 +37,7 @@ const skillCategories = [
             { fr: 'NextJS', en: 'NextJS' },
             { fr: 'Expo', en: 'Expo' },
             { fr: 'Django', en: 'Django' },
+            { fr: 'FastAPI', en: 'FastAPI' },
             { fr: 'MySQL', en: 'MySQL' },
             { fr: 'PostgreSQL', en: 'PostgreSQL' }
         ]
@@ -50,9 +51,30 @@ const skillCategories = [
             { fr: 'Anaconda', en: 'Anaconda' },
             { fr: 'Docker', en: 'Docker' },
             { fr: 'RStudio', en: 'RStudio' },
-            { fr: 'Unity', en: 'Unity' },
-            { fr: 'Blender', en: 'Blender' },
             { fr: 'Suite Office', en: 'Office Suite' }
+        ]
+    },
+    {
+        id: 'creative',
+        icon: Palette,
+        skills: [
+            { fr: 'Blender', en: 'Blender' },
+            { fr: 'Unity', en: 'Unity' },
+            { fr: 'Unreal Engine', en: 'Unreal Engine' },
+            { fr: 'Krita', en: 'Krita' },
+            { fr: 'Lunacy', en: 'Lunacy' }
+        ]
+    },
+    {
+        id: 'soft',
+        icon: Users,
+        skills: [
+            { fr: 'Adaptabilité', en: 'Adaptability' },
+            { fr: 'Travail d\'équipe', en: 'Teamwork' },
+            { fr: 'Communication', en: 'Communication' },
+            { fr: 'Résolution de problèmes', en: 'Problem Solving' },
+            { fr: 'Autonomie', en: 'Autonomy' },
+            { fr: 'Curiosité', en: 'Curiosity' }
         ]
     }
 ];
@@ -96,7 +118,7 @@ export default function SkillsSection() {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={category.id}

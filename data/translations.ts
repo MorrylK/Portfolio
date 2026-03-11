@@ -38,7 +38,9 @@ export const translations = {
                 ai: 'Data Science & AI',
                 analysis: 'Analysis & Processing',
                 dev: 'Web Technologies',
-                tools: 'Tools & Software'
+                tools: 'Tools & Software',
+                soft: 'Soft Skills',
+                creative: 'Creative & Visualization'
             }
         },
         education: {
@@ -86,7 +88,9 @@ export const translations = {
                 ai: 'Data Science & IA',
                 analysis: 'Analyse et traitement',
                 dev: 'Technologies Web',
-                tools: 'Outils & Logiciels'
+                tools: 'Outils & Logiciels',
+                soft: 'Soft Skills',
+                creative: 'Création & Visualisation'
             }
         },
         education: {

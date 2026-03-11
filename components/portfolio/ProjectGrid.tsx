@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import ProjectCard from './ProjectCard';
 import { Project } from '@/data/projects';
@@ -17,6 +18,7 @@ interface ProjectGridProps {
 
 export default function ProjectGrid({ category, projects, icon: Icon, color }: ProjectGridProps) {
     const { language, t } = useLanguage();
+    const router = useRouter();
 
     const translatedProjects = projects.map(p => ({
         ...p,
@@ -37,7 +39,7 @@ export default function ProjectGrid({ category, projects, icon: Icon, color }: P
                         className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 cursor-pointer"
                         onClick={(e) => {
                             e.preventDefault();
-                            window.location.href = '/#categories';
+                            router.push('/#categories');
                         }}
                     >
                         <ArrowLeft className="w-5 h-5" />

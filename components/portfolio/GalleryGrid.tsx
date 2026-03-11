@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, X, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { Project } from '@/data/projects';
 
@@ -16,6 +17,7 @@ interface GalleryGridProps {
 
 export default function GalleryGrid({ category, projects, icon: Icon, color }: GalleryGridProps) {
     const { language, t } = useLanguage();
+    const router = useRouter();
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     const translatedProjects = projects.map(p => ({
@@ -37,7 +39,7 @@ export default function GalleryGrid({ category, projects, icon: Icon, color }: G
                         className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 cursor-pointer"
                         onClick={(e) => {
                             e.preventDefault();
-                            window.location.href = '/#categories';
+                            router.push('/#categories');
                         }}
                     >
                         <ArrowLeft className="w-5 h-5" />

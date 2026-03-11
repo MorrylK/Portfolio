@@ -74,7 +74,7 @@ export default function CategoryCard({ category, title, icon: Icon, onClick, ind
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onClick={onClick}
       onMouseMove={onMouseMove}
-      className={`group relative h-64 cursor-pointer rounded-3xl border border-slate-800 bg-slate-950/50 overflow-hidden transition-all duration-500 ${style.border} hover:shadow-2xl hover:scale-[1.02]`}
+      className={`group relative h-full cursor-pointer rounded-3xl border border-slate-800 bg-slate-950/50 overflow-hidden transition-all duration-500 ${style.border} hover:shadow-2xl hover:scale-[1.02]`}
       style={{
         transformStyle: 'preserve-3d'
       }}

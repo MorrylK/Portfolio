@@ -43,17 +43,34 @@ export default function CategorySection() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {categories.map((id, index) => (
-            <Link key={id} href={`/portfolio/${id}`}>
-              <CategoryCard
-                category={id}
-                title={t.categories[id]}
-                icon={iconMap[id]}
-                index={index}
-              />
-            </Link>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-fr">
+          {categories.map((id, index) => {
+            let gridClasses = "h-64";
+            if (id === 'ai-data') {
+              gridClasses = "md:col-span-2 md:h-[450px]";
+            } else if (id === 'web-mobile') {
+              gridClasses = "md:col-span-1 md:h-[450px]";
+            } else if (id === 'video-games') {
+              gridClasses = "md:col-span-2 md:h-64";
+            } else if (id === '3d-art') {
+              gridClasses = "md:col-span-1 md:h-64";
+            }
+
+            return (
+              <Link
+                key={id}
+                href={`/portfolio/${id}`}
+                className={gridClasses}
+              >
+                <CategoryCard
+                  category={id}
+                  title={t.categories[id]}
+                  icon={iconMap[id]}
+                  index={index}
+                />
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
