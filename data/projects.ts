@@ -119,6 +119,15 @@ export const categoryData: Record<keyof typeof translations.en.categories, Categ
         color: 'text-amber-400',
         projects: [
             {
+                title: 'MorrylK - 3D Concept',
+                titleFr: 'MorrylK - Concept 3D',
+                description: '3D Art',
+                descriptionFr: '3D Art',
+                image: '/assets/3d-art/MK_2c_ext.png',
+                type: 'Showcase',
+                tags: ['Blender', 'Lighting', 'Texturing', 'Modeling'],
+            },
+            {
                 title: 'Blue Text Yellow Light',
                 titleFr: 'Texte Bleu Lumière Jaune',
                 description: 'Dynamic 3D text animation with vibrant lighting effects and smooth motion.',

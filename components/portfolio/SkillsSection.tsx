@@ -14,7 +14,8 @@ const skillCategories = [
             { fr: 'Tests statistiques', en: 'Statistical Testing' },
             { fr: 'Machine Learning (classification, régression, clustering)', en: 'Machine Learning (classification, regression, clustering)' },
             { fr: 'Réseaux de neurones', en: 'Neural Networks' },
-            { fr: 'Validation de modèles', en: 'Model Validation' }
+            { fr: 'Validation de modèles', en: 'Model Validation' },
+            { fr: 'Langchain', en: 'Langchain' }
         ]
     },
     {
