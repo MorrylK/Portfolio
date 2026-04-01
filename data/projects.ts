@@ -44,8 +44,7 @@ export const categoryData: Record<keyof typeof translations.en.categories, Categ
                 descriptionFr: 'Chatbot IA conversationnel spécialement entraîné sur les documentations de Blender et Unity pour la 3D et le jeu vidéo. Fonctionne avec RAG (Langchain, base vectorielle Qdrant, PostgreSQL, embeddings BAAI/bge-m3, modèle llama-3.1-8b-instant, API Groq), frontend Next.js et backend FastAPI.',
                 image: '/assets/ai-data/realm-chatbot.png',
                 type: 'Conversational AI',
-                tags: ['Langchain', 'Qdrant', 'PostgreSQL', 'BAAI/bge-m3', 'Llama-3.1-8b-instant', 'Groq', 'Next.js', 'FastAPI', 'RAG', 'Blender', 'Unity', '3D', 'Gaming'],
-                github: 'https://github.com/MorrylK/RealmSRV'
+                tags: ['Langchain', 'Qdrant', 'PostgreSQL', 'BAAI/bge-m3', 'Llama-3.1-8b-instant', 'Groq', 'Next.js', 'FastAPI', 'RAG', 'Blender', 'Unity', '3D', 'Gaming']
             }
         ]
     },
