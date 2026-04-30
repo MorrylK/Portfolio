@@ -68,5 +68,16 @@ export const experienceData: TimelineItem[] = [
         description: 'Development of web solutions front-end and back-end, maintenance and software support, interface optimization.',
         descriptionFr: 'Développement de solutions web front-end et back-end, maintenance et support logiciel, optimisation des interfaces.',
         tags: ['React', 'Next.js', 'TailwindCSS', 'PostgreSQL']
+    },
+    {
+        id: 'exp-4',
+        year: 'Juillet 2023 - Août 2023',
+        yearEn: 'July 2023 - Aug. 2023',
+        title: 'Excel VBA Developer',
+        titleFr: 'Développeur Excel VBA',
+        organization: 'LA PIZZERIA SARL',
+        description: 'Development of a custom restaurant management application. Design and implementation of automated stock management modules and adaptation of the tool to the establishment\'s economic and functional requirements.',
+        descriptionFr: 'Développement d\'une application de gestion de restauration sur mesure. Conception et implémentation de modules de gestion des stocks automatisés et adaptation de l\'outil aux besoins économiques et fonctionnels de l\'établissement.',
+        tags: ['VBA', 'Excel']
     }
 ];
