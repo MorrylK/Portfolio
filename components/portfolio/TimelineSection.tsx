@@ -2,20 +2,22 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { TimelineItem } from '@/data/about';
 
 interface TimelineSectionProps {
+    id?: string;
     title: string;
     subtitle: string;
     items: TimelineItem[];
 }
 
-export default function TimelineSection({ title, subtitle, items }: TimelineSectionProps) {
-    const { language } = useLanguage();
+export default function TimelineSection({ id, title, subtitle, items }: TimelineSectionProps) {
+    const { language, t } = useLanguage();
 
     return (
-        <section className="py-24 relative">
+        <section id={id} className="py-24 relative">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16">
                     <motion.span
@@ -54,7 +56,7 @@ export default function TimelineSection({ title, subtitle, items }: TimelineSect
                             >
                                 {/* Content */}
                                 <div className="w-full md:w-1/2 pl-10 md:pl-0">
-                                    <div className={`p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/50 transition-colors ${idx % 2 === 0 ? 'md:mr-12' : 'md:ml-12'
+                                    <div className={`p-8 rounded-3xl bg-slate-900/50 border border-slate-800 hover:border-blue-500/50 transition-all duration-300 ${idx % 2 === 0 ? 'md:mr-12' : 'md:ml-12'
                                         }`}>
                                         <span className="text-blue-400 font-medium mb-2 block">
                                             {language === 'en' ? (item.yearEn || item.year) : item.year}
@@ -68,15 +70,30 @@ export default function TimelineSection({ title, subtitle, items }: TimelineSect
                                         <p className="text-slate-400 leading-relaxed mb-6">
                                             {language === 'fr' ? item.descriptionFr : item.description}
                                         </p>
-                                        {item.tags && (
-                                            <div className="flex flex-wrap gap-2">
-                                                {item.tags.map(tag => (
-                                                    <span key={tag} className="px-3 py-1 text-xs bg-slate-800/50 text-slate-400 rounded-full border border-slate-700/50">
-                                                        {tag}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        )}
+                                        
+                                        <div className="flex flex-wrap items-center justify-between gap-4">
+                                            {item.tags && (
+                                                <div className="flex flex-wrap gap-2">
+                                                    {item.tags.map(tag => (
+                                                        <span key={tag} className="px-3 py-1 text-xs bg-slate-800/50 text-slate-400 rounded-full border border-slate-700/50">
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
+
+                                            {item.link && (
+                                                <a
+                                                    href={item.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                                                >
+                                                    <span>{t.certifications.viewCertificate}</span>
+                                                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
 

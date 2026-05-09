@@ -9,6 +9,7 @@ export interface TimelineItem {
     description: string;
     descriptionFr: string;
     tags?: string[];
+    link?: string;
 }
 
 export const educationData: TimelineItem[] = [
@@ -79,5 +80,30 @@ export const experienceData: TimelineItem[] = [
         description: 'Development of a custom restaurant management application. Design and implementation of automated stock management modules and adaptation of the tool to the establishment\'s economic and functional requirements.',
         descriptionFr: 'Développement d\'une application de gestion de restauration sur mesure. Conception et implémentation de modules de gestion des stocks automatisés et adaptation de l\'outil aux besoins économiques et fonctionnels de l\'établissement.',
         tags: ['VBA', 'Excel']
+    }
+];
+
+export const certificationData: TimelineItem[] = [
+    {
+        id: 'cert-1',
+        year: '2026',
+        title: 'Artificial Intelligence Fundamentals',
+        titleFr: 'Fondamentaux de l\'Intelligence Artificielle',
+        organization: 'IBM',
+        description: 'Knowledge of AI concepts: NLP, Computer Vision, Machine Learning, Deep Learning, Chatbots, and Neural Networks. AI ethics and applications using IBM Watson Studio.',
+        descriptionFr: 'Connaissances des concepts de l\'IA : NLP, Vision par ordinateur, Machine Learning, Deep Learning, Chatbots et réseaux de neurones. Éthique de l\'IA et applications utilisant IBM Watson Studio.',
+        tags: ['AI', 'Machine Learning', 'IBM Watson', 'Ethics'],
+        link: 'https://www.credly.com/badges/4426c002-2176-4229-9cce-70aa4923a109/public_url'
+    },
+    {
+        id: 'cert-2',
+        year: '2022',
+        title: 'Junior Programmer: Create with Code 1',
+        titleFr: 'Junior Programmer : Créer avec Code 1',
+        organization: 'Unity',
+        description: 'Foundation for creating digital experiences in Unity. Fundamental programming concepts: variables, functions, and logic through practical projects.',
+        descriptionFr: 'Bases pour la création d\'expériences numériques avec Unity. Concepts fondamentaux de programmation : variables, fonctions et logique à travers des projets pratiques.',
+        tags: ['Unity', 'C#', 'Programming', 'Game Dev'],
+        link: 'https://learn.unity.com/u/629adb68edbc2a247765fa98'
     }
 ];

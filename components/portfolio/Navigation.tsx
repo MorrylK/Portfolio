@@ -22,8 +22,10 @@ export default function Navigation() {
 
   const navItems = [
     { label: t.nav.work, href: '#categories' },
-    { label: t.nav.about, href: '#home' },
-    { label: t.nav.contact, href: '#contact' },
+    { label: t.nav.skills, href: '#skills' },
+    { label: t.nav.experience, href: '#experience' },
+    { label: t.nav.education, href: '#education' },
+    { label: t.nav.certifications, href: '#certifications' },
   ];
 
   return (
@@ -37,7 +39,7 @@ export default function Navigation() {
         <Link href="/" className="text-xl font-medium text-white cursor-pointer">
           Portfolio<span className="text-blue-400">.</span>
         </Link>
-
+ 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -57,13 +59,13 @@ export default function Navigation() {
             <span className="uppercase">{language === 'en' ? 'fr' : 'en'}</span>
           </button>
           <a
-            href="mailto:hello@example.com"
+            href="#contact"
             className="px-5 py-2 text-sm bg-white text-slate-900 rounded-full font-medium hover:bg-slate-100 transition-colors"
           >
             {t.nav.letsTalk}
           </a>
         </div>
-
+ 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -72,7 +74,7 @@ export default function Navigation() {
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
-
+ 
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.div
@@ -100,7 +102,8 @@ export default function Navigation() {
               <span className="uppercase">{language === 'en' ? 'Français' : 'English'}</span>
             </button>
             <a
-              href="mailto:hello@example.com"
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
               className="mt-4 px-5 py-3 text-center bg-white text-slate-900 rounded-full font-medium"
             >
               {t.nav.letsTalk}

@@ -93,11 +93,11 @@ const languages = [
 ];
 
 
-export default function SkillsSection() {
+export default function SkillsSection({ id }: { id?: string }) {
     const { t, language } = useLanguage();
 
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section id={id} className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="mb-16">
                     <motion.span

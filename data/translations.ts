@@ -5,7 +5,10 @@ export const translations = {
     en: {
         nav: {
             work: 'Work',
-            about: 'About',
+            skills: 'Skills',
+            experience: 'Experience',
+            education: 'Education',
+            certifications: 'Certifications',
             contact: 'Contact',
             letsTalk: "Let's Talk",
             portfolio: 'Portfolio'
@@ -50,12 +53,20 @@ export const translations = {
         experience: {
             title: 'Professional Experience',
             subtitle: 'Experience'
+        },
+        certifications: {
+            title: 'Certifications',
+            subtitle: 'Achievement',
+            viewCertificate: 'View Certificate'
         }
     },
     fr: {
         nav: {
             work: 'Travaux',
-            about: 'À propos',
+            skills: 'Compétences',
+            experience: 'Expérience',
+            education: 'Formation',
+            certifications: 'Certifications',
             contact: 'Contact',
             letsTalk: 'Discutons',
             portfolio: 'Portfolio'
@@ -100,6 +111,11 @@ export const translations = {
         experience: {
             title: 'Expériences Professionnelles',
             subtitle: 'Expérience'
+        },
+        certifications: {
+            title: 'Certifications',
+            subtitle: 'Réalisations',
+            viewCertificate: 'Voir le certificat'
         }
     }
 } as const;

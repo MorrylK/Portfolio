@@ -21,8 +21,8 @@ export default function CategorySection() {
   const categories = Object.keys(iconMap) as (keyof typeof iconMap)[];
 
   return (
-    <section ref={sectionRef} className="py-24 px-4 md:px-0 bg-slate-950 flex flex-col items-center justify-center" id="categories">
-      <div className="w-full max-w-5xl">
+    <section ref={sectionRef} className="py-24 bg-slate-950" id="categories">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
